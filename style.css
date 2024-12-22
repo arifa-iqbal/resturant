@@ -366,12 +366,13 @@ body {
 .chef-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: #000;
+  color: #fff;
 }
 
 .section-title {
   font-size: 36px;
-  color: #333;
+  color: #ffffff !important;
   margin-bottom: 40px;
   font-family: "Poppins", sans-serif;
 }
@@ -388,13 +389,13 @@ body {
   height: 450px;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(235, 234, 234, 0.658);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chef-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.507);
 }
 
 .chef-img {
@@ -454,7 +455,7 @@ body {
   background-color: #f8f9fa;
 }
 
-.section-title {
+.section-title-reviews {
   font-size: 36px;
   color: #333;
   margin-bottom: 40px;
