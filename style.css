@@ -474,11 +474,6 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.review-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
 .review-img {
   width: 100px;
   height: 100px;
