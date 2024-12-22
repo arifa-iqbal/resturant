@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Website</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <!-- Brand Name -->
+        <a class="navbar-brand" href="#">
+          <h6>Savory Bites</h6>
+        </a>
+
+        <!-- Toggle Button for Mobile View -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <!-- Order Now Button -->
+          <a href="#order" class="btn btn-warning ms-3">Order Now</a>
+        </div>
+      </div>
+    </nav>
+    <!-- hero section -->
+    <header id="home" class="hero-section">
+      <div class="container">
+        <h1>Welcome to Savory Bites</h1>
+        <p class="lead">The best place for delicious food!</p>
+        <div class="mt-4">
+          <a href="#menu" class="btn btn-primary btn-lg me-2">Explore Menu</a>
+          <a href="#order" class="btn btn-outline-light btn-lg">Order Now</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Menu</h2>
+        <div class="tabs">
+          <button
+            class="tab-links btn-outline-primary mx-2 filter-btn active"
+            onclick="openMenu(event, 'allType')"
+          >
+            All
+          </button>
+          <button
+            class="tab-links btn-outline-primary mx-2 filter-btn"
+            onclick="openMenu(event, 'fastFood')"
+          >
+            Fast Food
+          </button>
+          <button
+            class="tab-links btn-outline-primary mx-2 filter-btn"
+            onclick="openMenu(event, 'drinks')"
+          >
+            Drinks
+          </button>
+          <button
+            class="tab-links btn-outline-primary mx-2 filter-btn"
+            onclick="openMenu(event, 'desserts')"
+          >
+            Desserts
+          </button>
+        </div>
+        <div
+          id="allType"
+          class="row mt-4 g-4 menu-items tabItem"
+          style="display: flex"
+        >
+          <!-- All Items -->
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Burger', 'A juicy beef burger.', './assets/images/item-1.webp', '5.99')"
+            >
+              <img
+                src="./assets/images/item-1.webp"
+                class="card-img-top food-img"
+                alt="Burger"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Pepperoni Pizza', 'A delicious cheesy pizza with toppings.', './assets/images/pizza.jpg','8.99')"
+            >
+              <img
+                src="./assets/images/pizza.jpg"
+                class="card-img-top food-img"
+                alt="Pizza"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Soda', 'A refreshing chilled soda to quench your thirst.', './assets/images/soda.jpg', 2.99)"
+            >
+              <img
+                src="./assets/images/soda.jpg"
+                class="card-img-top food-img"
+                alt="Drink"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Lemonade', 'A refreshing lemonade with a tangy twist.', './assets/images/item-5.jpg', 3.50)"
+            >
+              <img
+                src="./assets/images/item-5.jpg"
+                class="card-img-top food-img"
+                alt="Lemonade"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Chocolate Cake', 'A rich and decadent chocolate cake topped with creamy frosting.', './assets/images/item-3.jpg', 5.99)"
+            >
+              <img
+                src="./assets/images/item-3.jpg"
+                class="card-img-top food-img"
+                alt="Chocolate Cake"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Apple Pie', 'A delicious apple pie with a golden crust and cinnamon-spiced filling.', './assets/images/apple-pie.jpg', 3.75)"
+            >
+              <img
+                src="./assets/images/apple-pie.jpg"
+                class="card-img-top food-img"
+                alt="Apple Pie"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="fastFood" class="row tabItem mt-4 g-4" style="display: none">
+          <!-- Fast Food Items -->
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Pepperoni Pizza', 'A delicious cheesy pizza with toppings.', './assets/images/pizza.jpg','8.99')"
+            >
+              <img
+                src="./assets/images/pizza.jpg"
+                class="card-img-top food-img"
+                alt="Pizza"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Hamburger', 'A classic hamburger with a juicy beef patty, fresh lettuce, and a toasted bun.', './assets/images/burgr.jpg', 7.99)"
+            >
+              <img
+                src="./assets/images/burgr.jpg"
+                class="card-img-top food-img"
+                alt="Hamburger"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Fries', 'Crispy golden fries, seasoned to perfection.', './assets/images/fries.jpg', 3.99)"
+            >
+              <img
+                src="./assets/images/fries.jpg"
+                class="card-img-top food-img"
+                alt="Fries"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="drinks" class="row tabItem mt-4 g-4" style="display: none">
+          <!-- Drinks Items -->
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Soda', 'A refreshing chilled soda to quench your thirst.', './assets/images/soda.jpg', 2.99)"
+            >
+              <img
+                src="./assets/images/soda.jpg"
+                class="card-img-top food-img"
+                alt="Drink"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Lemonade', 'A refreshing lemonade with a tangy twist.', './assets/images/item-5.jpg', 3.50)"
+            >
+              <img
+                src="./assets/images/item-5.jpg"
+                class="card-img-top food-img"
+                alt="Lemonade"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Coffee', 'Freshly brewed hot coffee to energize your day.', './assets/images/coffee.jpg', 2.99)"
+            >
+              <img
+                src="./assets/images/coffee.jpg"
+                class="card-img-top food-img"
+                alt="Coffee"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="desserts" class="row tabItem mt-4 g-4" style="display: none">
+          <!-- Desserts Items -->
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Chocolate Cake', 'A rich and decadent chocolate cake topped with creamy frosting.', './assets/images/item-3.jpg', 5.99)"
+            >
+              <img
+                src="./assets/images/item-3.jpg"
+                class="card-img-top food-img"
+                alt="Chocolate Cake"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Ice Cream', 'Creamy vanilla ice cream, perfect for dessert lovers.', './assets/images/ice-crem.jpg', 4.50)"
+            >
+              <img
+                src="./assets/images/ice-crem.jpg"
+                class="card-img-top food-img"
+                alt="Ice Cream"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 menu-item">
+            <div
+              class="card"
+              data-bs-toggle="modal"
+              data-bs-target="#foodModal"
+              onclick="openModal('Pastry', 'A buttery, flaky pastry perfect for breakfast or a sweet treat.', './assets/images/Pastry.jpg', 3.50)"
+            >
+              <img
+                src="./assets/images/Pastry.jpg"
+                class="card-img-top food-img"
+                alt="Pastry"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="itemModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Food Image" />
+            <h2 id="modal-title">Item Title</h2>
+            <p id="modal-description">Item Description</p>
+            <p id="modal-price" class="modal-price">Price: $0.00</p>
+            <button class="order-btn">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example of Order Section -->
+    <section id="order" class="order-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Your Order</h2>
+        <div class="order-summary">
+          <div class="order-item">
+            <img
+              src="./assets/images/burgr.jpg"
+              alt="Burger"
+              class="order-img"
+            />
+            <div class="order-details">
+              <h5>Delicious Burger</h5>
+              <p>$8.99</p>
+              <div class="quantity">
+                <button class="btn btn-danger">-</button>
+                <span class="quantity-number">1</span>
+                <button class="btn btn-success">+</button>
+              </div>
+            </div>
+          </div>
+          <!-- ice-cream -->
+          <div class="order-item">
+            <img
+              src="./assets/images/ice-crem.jpg"
+              alt="Ice Cream"
+              class="order-img"
+            />
+            <div class="order-details">
+              <h5>Delicious Ice Cream</h5>
+              <p>$4.99</p>
+              <div class="quantity">
+                <button class="btn btn-danger">-</button>
+                <span class="quantity-number">1</span>
+                <button class="btn btn-success">+</button>
+              </div>
+            </div>
+          </div>
+          <!-- pizza -->
+          <div class="order-item">
+            <img
+              src="./assets/images/pizza.jpg"
+              alt="Pizza"
+              class="order-img"
+            />
+            <div class="order-details">
+              <h5>Cheese Pizza</h5>
+              <p>$10.99</p>
+              <div class="quantity">
+                <button class="btn btn-danger">-</button>
+                <span class="quantity-number">1</span>
+                <button class="btn btn-success">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-price">
+          <h4>Total: $30.50</h4>
+        </div>
+
+        <div class="checkout-btn">
+          <button
+            class="btn proceed-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#orderModal"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- our chef section -->
+    <section id="our-chef" class="chef-section">
+      <h2 class="section-title">Meet Our Chefs</h2>
+      <div class="chef-cards">
+        <div class="chef-card">
+          <img src="./assets/images/chef-1.jpg" alt="Chef 1" class="chef-img" />
+          <div class="chef-info">
+            <h4>Chef John</h4>
+            <p>Specialty: Italian Cuisine</p>
+            <p>A passionate chef bringing traditional flavors to life.</p>
+          </div>
+        </div>
+        <div class="chef-card">
+          <img
+            src="./assets/images/chef-2.webp"
+            alt="Chef 2"
+            class="chef-img"
+          />
+          <div class="chef-info">
+            <h4>Chef Maria</h4>
+            <p>Specialty: Pastries & Desserts</p>
+            <p>A sweet tooth's dream come true with delicate desserts.</p>
+          </div>
+        </div>
+        <div class="chef-card">
+          <img src="./assets/images/chef-3.jpg" alt="Chef 3" class="chef-img" />
+          <div class="chef-info">
+            <h4>Chef David</h4>
+            <p>Specialty: Grilled Meats</p>
+            <p>Master of flavors, bringing smoky perfection to every dish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- review section -->
+    <section id="reviews" class="reviews-section">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="review-card">
+              <img
+                src="./assets/images/user-1.avif"
+                alt="Customer 1"
+                class="review-img"
+              />
+              <div class="review-content">
+                <p class="review-text">
+                  "The food here is absolutely amazing! Highly recommend the
+                  pizza and pasta. The flavors are just perfect!"
+                </p>
+                <h5 class="reviewer-name">John Doe</h5>
+                <p class="reviewer-position">Food Enthusiast</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="review-card">
+              <img
+                src="./assets/images/user-2.avif"
+                alt="Customer 2"
+                class="review-img"
+              />
+              <div class="review-content">
+                <p class="review-text">
+                  "Best burger I’ve had in a while! The customer service is
+                  top-notch, and the ambiance is wonderful."
+                </p>
+                <h5 class="reviewer-name">Emily Smith</h5>
+                <p class="reviewer-position">Frequent Visitor</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="review-card">
+              <img
+                src="./assets/images/user-3.avif"
+                alt="Customer 3"
+                class="review-img"
+              />
+              <div class="review-content">
+                <p class="review-text">
+                  "A delightful dining experience! The desserts were delicious,
+                  and the chefs really know their craft."
+                </p>
+                <h5 class="reviewer-name">James Miller</h5>
+                <p class="reviewer-position">Food Critic</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#reviewCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#reviewCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./app.js"></script>
+  </body>
+</html>

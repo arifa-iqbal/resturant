@@ -1,0 +1,509 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+/* Navbar Styling */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-brand img {
+  width: 90px;
+  margin: 0 auto;
+}
+.navbar-nav .nav-link {
+  color: #ffffff; /* White text color */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107; /* Highlight color on hover */
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #ffc107 !important;
+}
+
+/* Order Now Button Styling */
+.btn-warning {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ffcc00;
+  transform: scale(1.1);
+}
+/* hero section styling */
+
+.hero-section {
+  background-image: url("./assets/images/heroImg.jpg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Text and Buttons Animation */
+.hero-section h1,
+.hero-section p,
+.hero-section .btn {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start below the visible position */
+  animation: fadeInUp 1s ease forwards; /* Animation */
+}
+
+.hero-section h1 {
+  animation-delay: 0.5s; /* Delay for smooth staggered effect */
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+  animation-delay: 0.7s;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section .btn-primary {
+  animation-delay: 1s;
+  background-color: #ffc107;
+  border: none;
+}
+
+.hero-section .btn-outline-light {
+  animation-delay: 1.2s;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.hero-section .btn:hover {
+  transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+/* Keyframes for Fade-in-Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Start position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End position */
+  }
+}
+/* Menu Section */
+
+/* Menu Section */
+#menu h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Fade-in effect for the menu items */
+.menu-items .menu-item {
+  display: grid;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.7s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menu Items Hover Effect */
+/* .tabs {
+  overflow: hidden;
+  border: 2px solid #c73800;
+  background-color: #070505d2;
+}
+.tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.tabs button:hover {
+  background-color: #ddd;
+}
+.filter-btn.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+} */
+/* Container for the tabs */
+.tabs {
+  overflow: hidden;
+  border-bottom: 2px solid #e4a100;
+  background-color: #1a1a1a; /* Dark theme for elegance */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* Style for the tab buttons */
+.tabs button {
+  background-color: transparent;
+  color: #e4a100;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: "Poppins", sans-serif; /* Modern and stylish font */
+}
+
+/* Hover effect for tab buttons */
+.tabs button:hover {
+  color: #ffffff;
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Active tab styling */
+.filter-btn.active {
+  color: #ffffff;
+  border-bottom: 3px solid #e4a100;
+  font-weight: bold;
+}
+
+/* Tab content styling */
+.tabItem {
+  display: none;
+  padding: 20px;
+  background-color: #262626; /* Subtle background for content */
+  color: #e4e4e4;
+  animation: fadeIn 0.5s ease; /* Smooth fade-in animation */
+}
+
+/* Add animation for tabs */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Show content when active */
+.tabItem.show {
+  display: block;
+}
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.modal-content img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.modal-content .close {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.order-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #f90;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.modal-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+.order-btn:hover {
+  background: #ff6700;
+}
+.card img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+/* oredr section */
+.order-section {
+  background-color: #f8f9fa;
+}
+
+.order-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-item img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.order-details h5 {
+  font-size: 1.2rem;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity button {
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.total-price {
+  text-align: right;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.checkout-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+.proceed-btn {
+  background-color: #c73800; /* Replace with your desired color */
+  background: #f90;
+  color: #fff; /* White text */
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease;
+}
+
+.proceed-btn:hover {
+  background-color: #d85f2e; /* Lighter color on hover */
+  border-color: #fffdfc;
+  color: #f8f9fa;
+}
+/* our chef section */
+/* Chef Section Styling */
+.chef-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.chef-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.chef-card {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chef-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.chef-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.chef-card:hover .chef-img {
+  transform: scale(1.1);
+}
+
+.chef-info {
+  padding: 15px;
+  background-color: white;
+  height: 150px;
+  border-top: 2px solid #ddd;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.chef-info h4 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.chef-info p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Hover effect on the card */
+.chef-card:hover .chef-info {
+  background-color: #ff6600a8;
+  color: white;
+}
+
+.chef-card:hover .chef-info h4 {
+  color: #fff;
+}
+
+.chef-card:hover .chef-info p {
+  color: #fdfbfb;
+}
+/* review section */
+
+/* Reviews Section Styling */
+.reviews-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.review-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.review-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.review-content {
+  padding: 10px;
+}
+
+.review-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.reviewer-name {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.reviewer-position {
+  font-size: 14px;
+  color: #777;
+}
