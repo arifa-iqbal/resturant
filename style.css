@@ -539,8 +539,20 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
-
+.small-card {
+  background-color: #1c1c1c;
+  border: 2px solid #f8b400;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
 .offer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.small-card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
@@ -549,6 +561,10 @@ body {
   width: 250px;
   height: 380px;
   object-fit: cover;
+  border-radius: 8px;
+}
+.small-card img {
+  width: 100% !important;
   border-radius: 8px;
 }
 
