@@ -93,27 +93,35 @@ decreaseBtn.forEach((button, index) => {
     }
   });
 });
-
 // Initial total price update
 updateTotal();
 
-// // our chef
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Function to add animation when the carousel changes
-//   const carousel = document.getElementById("chefCarousel");
-//   const carouselItems = document.querySelectorAll(".carousel-item");
+// contact us
 
-//   carousel.addEventListener("slide.bs.carousel", function (event) {
-//     // Remove active class from all carousel items
-//     carouselItems.forEach((item) => item.classList.remove("active"));
-//     // Add animation class to the next carousel item
-//     const nextItem = carouselItems[event.to];
-//     nextItem.classList.add("active");
-//   });
+// Initialize EmailJS
+(function () {
+  emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+})();
 
-//   // Function to initialize animations for chef cards
-//   const chefCards = document.querySelectorAll(".chef-card");
-//   chefCards.forEach((card) => {
-//     card.classList.add("active"); // Animate cards when loaded
-//   });
-// });
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Get form data
+    const form = event.target;
+    const name = form.user_name.value;
+    const email = form.user_email.value;
+    const message = form.message.value;
+
+    // Send form data to EmailJS
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form).then(
+      function (response) {
+        alert("Message sent successfully!");
+        form.reset(); // Reset form fields
+      },
+      function (error) {
+        alert("Failed to send message, please try again.");
+      }
+    );
+  });
