@@ -149,30 +149,6 @@ body {
   }
 }
 
-/* Menu Items Hover Effect */
-/* .tabs {
-  overflow: hidden;
-  border: 2px solid #c73800;
-  background-color: #070505d2;
-}
-.tabs button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-.tabs button:hover {
-  background-color: #ddd;
-}
-.filter-btn.active {
-  background-color: #007bff;
-  color: #fff;
-  border-color: #007bff;
-} */
 /* Container for the tabs */
 .tabs {
   overflow: hidden;
@@ -613,7 +589,10 @@ body {
 }
 /* contact us section */
 .contact-section {
-  background-color: #333;
+  background-image: url("./assets/images/contact-bg.jpg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #fff;
   padding: 50px 0;
   text-align: center;
