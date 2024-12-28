@@ -589,7 +589,8 @@ body {
 }
 /* contact us section */
 .contact-section {
-  background-image: url("./assets/images/contact-bg.jpg"); /* Replace with your image path */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./assets/images/contact-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
