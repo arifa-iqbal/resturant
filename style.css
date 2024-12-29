@@ -269,7 +269,8 @@ body {
 }
 
 .modal-content img {
-  width: 400px;
+  min-width: 400px;
+  max-width: 200px;
   height: 400px;
   object-fit: cover;
   object-fit: cover;
@@ -375,23 +376,75 @@ body {
   color: #f8f9fa;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
+@media screen and (max-width: 768px) {
+  .tabs {
+    flex-direction: column; /* Stack buttons vertically for smaller screens */
+    align-items: center;
   }
 
-  .hero-section {
-    padding: 20px;
+  .tabs button {
+    width: 80%; /* Make buttons fill more space on smaller screens */
+    font-size: 14px; /* Reduce font size slightly */
   }
-}
-/* @media (max-width: 1200px) {
+  .modal-content {
+    max-width: 90%; /* Make modal content wider on smaller screens */
+    padding: 15px;
+  }
+
+  .modal h2 {
+    font-size: 20px; /* Adjust title size */
+  }
+
+  .modal p {
+    font-size: 16px; /* Adjust description size */
+  }
+
+  .modal-price {
+    font-size: 18px; /* Adjust price font size */
+  }
+
+  .order-btn {
+    font-size: 14px; /* Adjust button size */
+    padding: 8px 15px;
+  }
   .card img {
-    max-width: 300px;
-    min-width: 348px;
-    height: 400px;
+    height: 300px;
     object-fit: cover;
   }
-} */
+}
+@media screen and (max-width: 480px) {
+  .modal-content {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .modal h2 {
+    font-size: 18px !important ;
+    font-weight: 600 !important;
+  }
+
+  .modal p {
+    font-size: 14px;
+  }
+
+  .modal-price {
+    font-size: 16px !important;
+  }
+
+  .order-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .modal-content img {
+    min-width: 200px;
+    max-width: 200px;
+    height: 180px;
+    object-fit: cover;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+}
 
 /* Chef Section Styling */
 .chef-section {
