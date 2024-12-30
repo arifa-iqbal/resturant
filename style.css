@@ -530,7 +530,37 @@ body {
 .chef-card:hover .chef-info p {
   color: #fdfbfb;
 }
-/* review section */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .chef-info h4 {
+    font-size: 20px;
+  }
+
+  .chef-info p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .chef-info h4 {
+    font-size: 18px;
+  }
+
+  .chef-info p {
+    font-size: 12px;
+  }
+
+  .chef-cards {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+  }
+}
 
 /* Reviews Section Styling */
 .reviews-section {
