@@ -471,6 +471,7 @@ body {
   position: relative;
   width: 350px;
   height: 450px;
+  margin-bottom: 10px;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(235, 234, 234, 0.658);
@@ -483,7 +484,6 @@ body {
 }
 
 .chef-card img {
-  width: 100%;
   height: 500px;
   object-fit: cover;
   transition: transform 0.3s ease;
@@ -730,6 +730,24 @@ body {
 .order-now:hover {
   background-color: #fff;
   color: #f8b400;
+}
+@media (max-width: 768px) {
+  .offer-card {
+    width: 100%;
+  }
+  .offer-card img {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .small-card {
+    background-color: #1c1c1c;
+    border: 2px solid #f8b400;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
 }
 /* contact us section */
 .contact-section {
