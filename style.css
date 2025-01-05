@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", serif;
 }
 .container {
   width: 90% !important;
@@ -18,14 +18,16 @@ body {
   font-weight: bold;
   font-size: 1.5rem;
 }
-
-.navbar-brand img {
-  width: 90px;
-  margin: 0 auto;
+.navbar-brand h6 {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
 }
+
 .navbar-nav .nav-link {
   color: #ffffff;
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .navbar-nav .nav-link:hover {
@@ -40,15 +42,9 @@ body {
 /* Order Now Button Styling */
 .btn-warning {
   font-weight: 500;
-  /* padding: 8px 4px !important; */
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-/* .btn {
-  padding: 10px 7px !important;
-  font-size: 18px !important;
-  font-weight: 500;
-} */
 
 .btn-warning:hover {
   background-color: #ffcc00;
@@ -59,11 +55,11 @@ body {
 /* hero section styling */
 
 .hero-section {
-  background-image: url("./assets/images/heroImg.jpg"); /* Replace with your image path */
+  background-image: url("./assets/images/Lentil\ Bolognese.jpg"); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,21 +87,23 @@ body {
 .hero-section h1,
 .hero-section p,
 .hero-section .btn {
-  opacity: 0; /* Initially hidden */
-  transform: translateY(30px); /* Start below the visible position */
-  animation: fadeInUp 1s ease forwards; /* Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
 }
 
 .hero-section h1 {
   animation-delay: 0.5s; /* Delay for smooth staggered effect */
-  font-size: 3.5rem;
+  font-size: 50px;
+  font-style: italic;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-section p {
   animation-delay: 0.7s;
-  font-size: 1.5rem;
+  font-size: 24px;
+  font-weight: 600;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
@@ -114,12 +112,16 @@ body {
   animation-delay: 1s;
   background-color: #ffc107;
   border: none;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .hero-section .btn-outline-light {
   animation-delay: 1.2s;
   border: 2px solid #fff;
   color: #fff;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .hero-section .btn:hover {
@@ -318,6 +320,10 @@ body {
 .order-section {
   background-color: #f8f9fa;
 }
+.order-section h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
 
 .order-summary {
   display: flex;
@@ -331,13 +337,14 @@ body {
 }
 
 .order-item img {
-  width: 100px;
-  height: 100px;
+  width: 50%;
+  height: 50%;
   margin-right: 20px;
+  object-fit: cover;
 }
 
 .order-details h5 {
-  font-size: 1.2rem;
+  font-size: 30px;
 }
 
 .quantity {
@@ -667,7 +674,7 @@ body {
   background-color: #1c1c1c;
   border: 2px solid #f8b400;
   border-radius: 10px;
-  width: 320px;
+  width: 420px;
   padding: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -676,7 +683,7 @@ body {
   background-color: #1c1c1c;
   border: 2px solid #f8b400;
   border-radius: 10px;
-  width: 320px;
+  width: 420px;
   padding: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -691,13 +698,16 @@ body {
 }
 
 .offer-card img {
-  width: 250px;
+  width: 100%;
   height: 380px;
   object-fit: cover;
   border-radius: 8px;
 }
 .small-card img {
   width: 100% !important;
+  border-radius: 8px;
+  height: 380px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -746,28 +756,29 @@ body {
 }
 @media (max-width: 992px) {
   .offer-card {
-    width: 422px;
+    width: 350px;
   }
   .small-card {
     width: 422px;
   }
   .offer-card img {
-    width: 300px;
+    width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .offer-card {
     width: 100%;
   }
-  .offer-card img {
-    width: 80%;
-    margin: 0 auto;
-  }
+
   .small-card {
     width: 100%;
   }
   .special-offers h2 {
     font-size: 36px;
+  }
+  .offer-card img {
+    width: 100%;
   }
 }
 @media (max-width: 576px) {
